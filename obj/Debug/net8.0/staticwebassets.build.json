@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "JI7zyEGQrDzg6042vCxrjHN67bo/weeXZlZPVfk1eXU=",
+  "Source": "FreeBilling.Web",
+  "BasePath": "_content/FreeBilling.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
