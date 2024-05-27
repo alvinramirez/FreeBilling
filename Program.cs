@@ -1,10 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
+
 var app = builder.Build();
 
-app.Run(async ctx =>
-{
-    await ctx.Response.WriteAsync("Welcome to FreeBillng");
-});
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
+
+//app.Run(async ctx =>
+//{
+//    await ctx.Response.WriteAsync("Welcome to FreeBillng");
+//});
 
 //app.Run(async ctxx =>
 //{
