@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "JI7zyEGQrDzg6042vCxrjHN67bo/weeXZlZPVfk1eXU=",
+  "Hash": "ZFvd6OFf2VzKrkg7gunoRJ2gHngcZBN7kWEoydEIAf4=",
   "Source": "FreeBilling.Web",
   "BasePath": "_content/FreeBilling.Web",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FreeBilling.Web\\wwwroot",
+      "Source": "FreeBilling.Web",
+      "ContentRoot": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\wwwroot\\",
+      "BasePath": "_content/FreeBilling.Web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\wwwroot\\index.html",
+      "SourceId": "FreeBilling.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\wwwroot\\",
+      "BasePath": "_content/FreeBilling.Web",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }

@@ -24,3 +24,4 @@ C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\r
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.pdb
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.genruntimeconfig.cache
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\ref\FreeBilling.Web.dll
+C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\bin\Debug\net8.0\FreeBilling.Web.staticwebassets.runtime.json
