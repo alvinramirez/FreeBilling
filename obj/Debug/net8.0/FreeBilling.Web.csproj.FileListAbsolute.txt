@@ -25,3 +25,5 @@ C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\F
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.genruntimeconfig.cache
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\ref\FreeBilling.Web.dll
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\bin\Debug\net8.0\FreeBilling.Web.staticwebassets.runtime.json
+C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.RazorAssemblyInfo.cache
+C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.RazorAssemblyInfo.cs

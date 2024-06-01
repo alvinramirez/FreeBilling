@@ -1,18 +1,11 @@
 ﻿@page
 @model FreeBilling.Web.Pages.IndexModel
 @{
-    var productName = "Free Billing Services";
+    //var productName = "Free Billing Services";
     //throw new InvalidOperationException("Bad things happen to good developers.");
+    ViewBag.Title = "Home Page";
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>@productName</title>
-    </head>
-    <body>
-        <h1>@productName</h1>
-        <p>@productName is a solution to billing for small companies and individuals</p>
-    </body>
-</html>
+    <h1>Free Billing</h1>
+    <p>Free Billing is a solution to billing for small companies and individuals</p>
