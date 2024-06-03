@@ -1,6 +1,31 @@
 ﻿@page
-@model FreeBilling.Web.Pages.ContactModel
+@model ContactModel
 @{
 }
+<h1>@Model.Title</h1>
+<form method="post">
+    <label for="name">Name</label>
+    <br />
+    <input id="name" type="text" />
+    <br />
+    <label for="email">Email</label>
+    <br />
+    <input id="email" type="email"/>
+    <br />
+    <label for="subject">Subject</label>
+    <br />
+    <select>
+        <option>Work</option>
+        <option>Personal</option>
+        <option>Proposal</option>
+    </select>
+    <br />
+    <label for="body">Message</label>
+    <br />
+    <textarea rows="4" id="body"></textarea>
+    <br />
+    <button type="submit">Send</button>
+    <br />
+    <div>@Model.Message</div>
+</form>
 
-<h1>A contact form goes here</h1>
