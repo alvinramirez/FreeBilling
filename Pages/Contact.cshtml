@@ -4,25 +4,25 @@
 }
 <h1>@Model.Title</h1>
 <form method="post">
-    <label for="name">Name</label>
+    <label asp-for="Contact.Name">Name</label>
     <br />
-    <input id="name" type="text" />
+    <input asp-for="Contact.Name" />
     <br />
-    <label for="email">Email</label>
+    <label asp-for="Contact.Email">Email</label>
     <br />
-    <input id="email" type="email"/>
+    <input asp-for="Contact.Email" />
     <br />
-    <label for="subject">Subject</label>
+    <label asp-for="Contact.Subject">Subject</label>
     <br />
-    <select>
+    <select asp-for="Contact.Subject">
         <option>Work</option>
         <option>Personal</option>
         <option>Proposal</option>
     </select>
     <br />
-    <label for="body">Message</label>
+    <label asp-for="Contact.Body">Message</label>
     <br />
-    <textarea rows="4" id="body"></textarea>
+    <textarea rows="4" asp-for="Contact.Body"></textarea>
     <br />
     <button type="submit">Send</button>
     <br />
