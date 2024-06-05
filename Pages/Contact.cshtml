@@ -2,15 +2,25 @@
 @model ContactModel
 @{
 }
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+}
+
 <h1>@Model.Title</h1>
 <form method="post">
+    <div asp-validation-summary="ModelOnly" style="color:red;"></div>
     <label asp-for="Contact.Name">Name</label>
     <br />
     <input asp-for="Contact.Name" />
+    <span asp-validation-for="Contact.Name"></span>
     <br />
     <label asp-for="Contact.Email">Email</label>
     <br />
     <input asp-for="Contact.Email" />
+    <span asp-validation-for="Contact.Email"></span>
     <br />
     <label asp-for="Contact.Subject">Subject</label>
     <br />
@@ -19,10 +29,12 @@
         <option>Personal</option>
         <option>Proposal</option>
     </select>
+    <span asp-validation-for="Contact.Subject"></span>
     <br />
     <label asp-for="Contact.Body">Message</label>
     <br />
     <textarea rows="4" asp-for="Contact.Body"></textarea>
+    <span asp-validation-for="Contact.Body"></span>
     <br />
     <button type="submit">Send</button>
     <br />
