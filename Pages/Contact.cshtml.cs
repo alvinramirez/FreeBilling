@@ -11,7 +11,10 @@ namespace FreeBilling.Web.Pages
 
 
         [BindProperty]
-        public ContactViewModel Contact { get; set; } = new ContactViewModel();
+        public ContactViewModel Contact { get; set; } = new ContactViewModel()
+        {
+
+        };
 
         public void OnGet()
         {
@@ -19,7 +22,14 @@ namespace FreeBilling.Web.Pages
 
         public void OnPost(ContactViewModel model) 
         {
-            Message = "Not Implemented";
+            if (ModelState.IsValid)
+            {
+                Message = "Will Be Sent";
+            }
+            else 
+            {
+                Message = "Please fix the errors before sending.";
+            }
         }
     }
 }
