@@ -1,4 +1,5 @@
 using FreeBilling.Web.Pages.Models;
+using FreeBilling.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,6 +7,13 @@ namespace FreeBilling.Web.Pages
 {
     public class ContactModel : PageModel
     {
+        private readonly IEmailService emailService;
+
+        public ContactModel(IEmailService emailService)
+        {
+            this.emailService = emailService;
+        }
+
         public string Title { get; set; } = "Contact Me";
         public string Message { get; set; } = "";
 
@@ -24,7 +32,10 @@ namespace FreeBilling.Web.Pages
         {
             if (ModelState.IsValid)
             {
-                Message = "Will Be Sent";
+                this.emailService.SendMail("alvin.ramirez48@gamil.com", Contact.Email, Contact.Subject, Contact.Body);
+                Contact = new ContactViewModel();
+                ModelState.Clear();
+                Message = "Sent...";
             }
             else 
             {
