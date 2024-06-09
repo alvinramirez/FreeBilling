@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZFvd6OFf2VzKrkg7gunoRJ2gHngcZBN7kWEoydEIAf4=",
+  "Hash": "lNPUo3UKjievdGWbHRzXvAFzqaEgTi3xJLh6CC25eBc=",
   "Source": "FreeBilling.Web",
   "BasePath": "_content/FreeBilling.Web",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FreeBilling.Web\\wwwroot",
       "Source": "FreeBilling.Web",
-      "ContentRoot": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\",
       "BasePath": "_content/FreeBilling.Web",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\index.html",
       "SourceId": "FreeBilling.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\",
       "BasePath": "_content/FreeBilling.Web",
       "RelativePath": "index.html",
       "AssetKind": "All",

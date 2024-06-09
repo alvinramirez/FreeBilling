@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\FreeBilling.Web.csproj": {}
+    "C:\\Users\\Alvin\\Documents\\FreeBilling\\FreeBilling.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\FreeBilling.Web.csproj": {
+    "C:\\Users\\Alvin\\Documents\\FreeBilling\\FreeBilling.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\FreeBilling.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Alvin\\Documents\\FreeBilling\\FreeBilling.Web.csproj",
         "projectName": "FreeBilling.Web",
-        "projectPath": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\FreeBilling.Web.csproj",
+        "projectPath": "C:\\Users\\Alvin\\Documents\\FreeBilling\\FreeBilling.Web.csproj",
         "packagesPath": "C:\\Users\\Alvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alvin\\Documents\\projects\\FreeBilling\\FreeBilling.Web\\obj\\",
+        "outputPath": "C:\\Users\\Alvin\\Documents\\FreeBilling\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
