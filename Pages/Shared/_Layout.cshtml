@@ -4,20 +4,26 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Free Billing - @ViewBag.Title</title>
+    <link href="~/site.css" rel="stylesheet" asp-append-version="true" />
     @RenderSection("header", false)
 </head>
 <body>
-    <header>
-        <h1>Free Billing</h1>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/Contact">Contact</a></li>
+    <header class="flex 
+                   justify-between
+                   w-full
+                   bg-blue-900
+                   text-white
+                   p-3">
+        <h1 class="font-bold text-2xl">Free Billing</h1>
+        <ul class="flex text-blue-300">
+            <li class="mx-2 hover:text-blue-500"><a href="/">Home</a></li>
+            <li class="mx-2 hover:text-blue-500"><a href="/Contact">Contact</a></li>
         </ul>
     </header>
-    <div>
+    <div class="bg-gray-400 p-2 w-full h-[calc(100vh-75px)] overflow-auto">
         @RenderBody()
     </div>
-    <footer>&copy; 2024 Free Billing</footer>
+    <footer class="text-center bg-black text-white">&copy; 2024 Free Billing</footer>
     @RenderSection("scripts", false)
 </body>
 </html>
