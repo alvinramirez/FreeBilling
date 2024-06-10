@@ -1,0 +1,16 @@
+{
+  "name": "freebilling",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "css": "npx tailwindcss -i ./wwwroot/site.src.css -o ./wwwroot/site.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.4.0"
+  }
+, "-vs-binding":{"ProjectOpened":["css"]}
+}

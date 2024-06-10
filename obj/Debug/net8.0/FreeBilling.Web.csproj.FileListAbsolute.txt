@@ -56,3 +56,5 @@ C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\refint\FreeBilling.Web.dll
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBilling.Web.pdb
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBilling.Web.genruntimeconfig.cache
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\ref\FreeBilling.Web.dll
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\package-lock.json
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\package.json

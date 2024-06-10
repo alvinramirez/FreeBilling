@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lNPUo3UKjievdGWbHRzXvAFzqaEgTi3xJLh6CC25eBc=",
+  "Hash": "pE5nMS+fmyWoBXUTVjHnJ4tNBVHETSRk/TFY3U9XyeI=",
   "Source": "FreeBilling.Web",
   "BasePath": "_content/FreeBilling.Web",
   "Mode": "Default",
@@ -34,6 +34,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\site.css",
+      "SourceId": "FreeBilling.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\",
+      "BasePath": "_content/FreeBilling.Web",
+      "RelativePath": "site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\site.src.css",
+      "SourceId": "FreeBilling.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\",
+      "BasePath": "_content/FreeBilling.Web",
+      "RelativePath": "site.src.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.src.css"
     }
   ]
 }
