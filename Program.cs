@@ -1,9 +1,19 @@
 using FreeBilling.Web.Data;
 using FreeBilling.Web.Services;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+IConfigurationBuilder configBuilder = builder.Configuration;
+configBuilder.Sources.Clear();
+configBuilder.AddJsonFile("appsettings.json")
+    .AddJsonFile("appsettings.development.json", true)
+    .AddUserSecrets(Assembly.GetExecutingAssembly())
+    .AddEnvironmentVariables()
+    .AddCommandLine(args);
+
 builder.Services.AddDbContext<BillingContext>();
+
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IEmailService, DevTimeEmailServices>();
 
