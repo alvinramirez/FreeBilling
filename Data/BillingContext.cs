@@ -5,11 +5,11 @@ namespace FreeBilling.Web.Data
 {
     public class BillingContext : DbContext
     {
-        private readonly IConfiguration config;
+        private readonly IConfiguration _config;
 
         public BillingContext(IConfiguration config)
         {
-            this.config = config;
+            _config = config;
         }
         public DbSet<Customer> Customers => Set<Customer>();
         public DbSet<Employee> Employees => Set<Employee>();
@@ -19,8 +19,8 @@ namespace FreeBilling.Web.Data
         {
             base.OnConfiguring(optionsBuilder);
 
-            var connectionString = this.config["ConnectionStrings:BillingDb"];
-            optionsBuilder.UseSqlServer();
+            var connectionString = _config["ConnectionStrings:BillingDb"];
+            optionsBuilder.UseSqlServer(connectionString);
         }
     }
 }
