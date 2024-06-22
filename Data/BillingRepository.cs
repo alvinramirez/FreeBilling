@@ -31,13 +31,32 @@ public class BillingRepository : IBillingRepository
 
     public async Task<IEnumerable<Customer>> GetCustomers()
     {
-        return await this.context.Customers
+        try
+        {
+            throw new InvalidOperationException("Bad things happen to good developers");
+            return await this.context.Customers
             .OrderBy(c => c.CompanyName)
             .ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            logger.LogError($"Could not get Customers: {ex.Message}");
+            throw;
+        }
+
+        
     }
 
     public async Task<bool> SaveChanges()
     {
-        return await context.SaveChangesAsync() > 0;
+        try
+        {
+            return await context.SaveChangesAsync() > 0;
+        }
+        catch (Exception ex)
+        {
+            logger.LogError($"Could not save to the Database: {ex.Message}");
+            throw;
+        }
     }
 }
