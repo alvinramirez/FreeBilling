@@ -18,6 +18,8 @@ builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IEmailService, DevTimeEmailServices>();
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 if (builder.Environment.IsDevelopment())
@@ -32,5 +34,7 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.MapRazorPages();
+
+app.MapControllers();
 
 app.Run();
