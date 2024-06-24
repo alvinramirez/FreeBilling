@@ -33,7 +33,6 @@ public class BillingRepository : IBillingRepository
     {
         try
         {
-            throw new InvalidOperationException("Bad things happen to good developers");
             return await this.context.Customers
             .OrderBy(c => c.CompanyName)
             .ToListAsync();
@@ -43,8 +42,20 @@ public class BillingRepository : IBillingRepository
             logger.LogError($"Could not get Customers: {ex.Message}");
             throw;
         }
-
-        
+    }
+    public async Task<Customer?> GetCustomer(int id)
+    {
+        try
+        {
+            return await this.context.Customers
+            .Where(c => c.Id == id)
+            .FirstOrDefaultAsync();
+        }
+        catch (Exception ex)
+        {
+            logger.LogError($"Could not get Customers: {ex.Message}");
+            throw;
+        }
     }
 
     public async Task<bool> SaveChanges()
