@@ -1,4 +1,9 @@
 GET http://localhost:8888/api/customers
 
-#############
+###
+
+GET http://localhost:8888/api/customers?withAddresses=true
+
+###
+
 GET http://localhost:8888/api/customers/1
