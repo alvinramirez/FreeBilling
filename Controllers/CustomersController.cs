@@ -7,22 +7,49 @@ namespace FreeBilling.Web.Controllers
     [Route("/api/[controller]")]
     public class CustomersController : ControllerBase
     {
+        private readonly ILogger<CustomersController> logger;
         private readonly IBillingRepository repository;
 
-        public CustomersController(IBillingRepository repository)
+        public CustomersController(ILogger<CustomersController> logger, IBillingRepository repository)
         {
+            this.logger = logger;
             this.repository = repository;
         }
 
         [HttpGet("")]
-        public async Task<IEnumerable<Customer>> Get()
+        public async Task<ActionResult<IEnumerable<Customer>>> Get()
         {
-            return await repository.GetCustomers();
+            try
+            {
+                return Ok(await repository.GetCustomers());
+            }
+            catch (Exception)
+            {
+                logger.LogError("Failed to get customers from database.");
+                return Problem("Failed to get customers from database.");
+            }
         }
         [HttpGet("{id:int}")]
-        public async Task<Customer?> GetOne(int id)
+        public async Task<ActionResult<Customer>> GetOne(int id)
         {
-            return await repository.GetCustomer(id);
+            try
+            {
+                var result = await repository.GetCustomer(id);
+
+                if (result is null) 
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogError("Exception thrown while reading customer");
+                return Problem($"Exception thrown: {ex.Message}");
+            }
         }
     }
 }
