@@ -17,11 +17,22 @@ namespace FreeBilling.Web.Controllers
         }
 
         [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<Customer>>> Get()
+        public async Task<ActionResult<IEnumerable<Customer>>> Get(bool withAddresses = false)
         {
             try
             {
-                return Ok(await repository.GetCustomers());
+                IEnumerable<Customer> results;
+
+                if (withAddresses)
+                {
+                    results = await repository.GetCustomersWithAddresses();
+                }
+                else
+                {
+                    results = await repository.GetCustomers();
+                }
+
+                return Ok(results);
             }
             catch (Exception)
             {
