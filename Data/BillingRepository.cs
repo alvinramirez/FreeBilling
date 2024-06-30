@@ -87,4 +87,10 @@ public class BillingRepository : IBillingRepository
             throw;
         }
     }
+
+    public async Task<TimeBill?> GetTimeBill(int id)
+    {
+        var bill = await context.TimeBills.FindAsync(id);
+        return bill;
+    }
 }
