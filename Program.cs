@@ -35,6 +35,15 @@ app.UseStaticFiles();
 
 app.MapRazorPages();
 
+app.MapGet("/api/timebills/{id:int}", async (IBillingRepository repository, int id) =>
+{
+    var bill = await repository.GetTimeBill(id);
+
+    if (bill is null) Results.NotFound();
+
+    return Results.Ok(bill);
+});
+
 app.MapControllers();
 
 app.Run();
