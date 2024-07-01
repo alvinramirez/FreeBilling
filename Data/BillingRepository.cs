@@ -93,4 +93,9 @@ public class BillingRepository : IBillingRepository
         var bill = await context.TimeBills.FindAsync(id);
         return bill;
     }
+
+    public void AddEntity<T>(T entity) where T : notnull
+    {
+        context.Add(entity);
+    }
 }
