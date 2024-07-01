@@ -1,3 +1,4 @@
+using FreeBilling.Data.Entities;
 using FreeBilling.Web.Data;
 using FreeBilling.Web.Services;
 using System.Reflection;
@@ -42,6 +43,20 @@ app.MapGet("/api/timebills/{id:int}", async (IBillingRepository repository, int 
     if (bill is null) Results.NotFound();
 
     return Results.Ok(bill);
+})
+    .WithName("GetTimeBill");
+
+app.MapPost("api/timebills", async (IBillingRepository repository, TimeBill model) =>
+{
+    repository.AddEntity(model);
+    if (await repository.SaveChanges())
+    {
+        return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, model);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
 });
 
 app.MapControllers();
