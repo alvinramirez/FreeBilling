@@ -22,5 +22,7 @@ Content-Type: application/json
   "billingRate": 125.00,
   "date": "2024-05-05",
   "clientRequested": true,
-  "workPerformed": "I did a thing..."
+  "workPerformed": "I did a thing...",
+  "customerId": 1,
+  "employeeId":1
 }
