@@ -51,6 +51,7 @@ app.MapPost("api/timebills", async (IBillingRepository repository, TimeBill mode
     repository.AddEntity(model);
     if (await repository.SaveChanges())
     {
+        var newBill = await repository.GetTimeBill(model.Id);
         return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, model);
     }
     else
