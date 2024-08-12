@@ -6,7 +6,7 @@ GET http://localhost:8888/api/customers?withAddresses=true
 
 ###
 
-GET http://localhost:8888/api/customers/1
+GET http://localhost:8888/api/customers/3
 
 ###
 
