@@ -7,30 +7,36 @@ namespace FreeBilling.Web.Apis
     {
         public static void Register(WebApplication app)
         {
+            var group = app.MapGroup("/api/timebills");
 
-            app.MapGet("/api/timebills/{id:int}", async (IBillingRepository repository, int id) =>
-            {
-                var bill = await repository.GetTimeBill(id);
-
-                if (bill is null) Results.NotFound();
-
-                return Results.Ok(bill);
-            })
+            group.MapGet("{id:int}", GetTimeBill)
                 .WithName("GetTimeBill");
 
-            app.MapPost("api/timebills", async (IBillingRepository repository, TimeBill model) =>
+            group.MapPost("", PostTimeBill);
+        }
+
+        public static async Task<IResult> GetTimeBill(IBillingRepository repository, 
+            int id)
+        {
+            var bill = await repository.GetTimeBill(id);
+
+            if (bill is null) return Results.NotFound();
+
+            return Results.Ok(bill);
+        }
+
+        public static async Task<IResult> PostTimeBill(IBillingRepository repository, TimeBill model)
+        {
+            repository.AddEntity(model);
+            if (await repository.SaveChanges())
             {
-                repository.AddEntity(model);
-                if (await repository.SaveChanges())
-                {
-                    var newBill = await repository.GetTimeBill(model.Id);
-                    return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, model);
-                }
-                else
-                {
-                    return Results.BadRequest();
-                }
-            });
+                var newBill = await repository.GetTimeBill(model.Id);
+                return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, model);
+            }
+            else
+            {
+                return Results.BadRequest();
+            }
         }
     }
 }
