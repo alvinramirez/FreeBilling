@@ -1,4 +1,5 @@
 using FreeBilling.Data.Entities;
+using FreeBilling.Web.Apis;
 using FreeBilling.Web.Data;
 using FreeBilling.Web.Services;
 using System.Reflection;
@@ -12,7 +13,6 @@ configBuilder.AddJsonFile("appsettings.json")
     .AddUserSecrets(Assembly.GetExecutingAssembly())
     .AddEnvironmentVariables()
     .AddCommandLine(args);
-
 builder.Services.AddDbContext<BillingContext>();
 builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 
@@ -36,29 +36,7 @@ app.UseStaticFiles();
 
 app.MapRazorPages();
 
-app.MapGet("/api/timebills/{id:int}", async (IBillingRepository repository, int id) =>
-{
-    var bill = await repository.GetTimeBill(id);
-
-    if (bill is null) Results.NotFound();
-
-    return Results.Ok(bill);
-})
-    .WithName("GetTimeBill");
-
-app.MapPost("api/timebills", async (IBillingRepository repository, TimeBill model) =>
-{
-    repository.AddEntity(model);
-    if (await repository.SaveChanges())
-    {
-        var newBill = await repository.GetTimeBill(model.Id);
-        return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, model);
-    }
-    else
-    {
-        return Results.BadRequest();
-    }
-});
+TimeBillsApi.Register(app);
 
 app.MapControllers();
 
