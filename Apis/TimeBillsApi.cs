@@ -1,5 +1,6 @@
 ﻿using FreeBilling.Data.Entities;
 using FreeBilling.Web.Data;
+using FreeBilling.Web.Models;
 
 namespace FreeBilling.Web.Apis
 {
@@ -25,13 +26,23 @@ namespace FreeBilling.Web.Apis
             return Results.Ok(bill);
         }
 
-        public static async Task<IResult> PostTimeBill(IBillingRepository repository, TimeBill model)
+        public static async Task<IResult> PostTimeBill(IBillingRepository repository, TimeBillModel model)
         {
-            repository.AddEntity(model);
+            var newEntity = new TimeBill()
+            {
+                CustomerId = model.CustomerId,
+                EmployeeId = model.EmployeeId,
+                Hours = model.HoursWorked,
+                BillingRate = model.Rate,
+                Date = model.Date,
+                WorkPerformed = model.Work
+            };
+
+            repository.AddEntity(newEntity);
             if (await repository.SaveChanges())
             {
-                var newBill = await repository.GetTimeBill(model.Id);
-                return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, model);
+                var newBill = await repository.GetTimeBill(newEntity.Id);
+                return Results.CreatedAtRoute("GetTimeBill", new { id = model.Id }, newBill);
             }
             else
             {
