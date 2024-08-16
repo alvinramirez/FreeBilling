@@ -10,7 +10,7 @@ GET http://localhost:8888/api/customers/3
 
 ###
 
-GET http://localhost:8888/api/timebills/1
+GET http://localhost:8888/api/timebills/2
 
 ###
 
@@ -18,11 +18,10 @@ POST http://localhost:8888/api/timebills
 Content-Type: application/json
 
 {
-  "hours": 2.5,
-  "billingRate": 125.00,
+  "hoursWorked": 2.5,
+  "rate": 125.00,
   "date": "2024-05-05",
-  "clientRequested": true,
-  "workPerformed": "I did a thing...",
+  "work": "I did a thing...",
   "customerId": 1,
   "employeeId":1
 }

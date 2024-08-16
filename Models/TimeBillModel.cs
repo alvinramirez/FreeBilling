@@ -7,9 +7,9 @@ namespace FreeBilling.Web.Models
         public int Id { get; set; }
         public int? EmployeeId { get; set; }
         public int? CustomerId { get; set; }
-        public double Hours { get; set; }
-        public double BillingRate { get; set; }
+        public double HoursWorked { get; set; }
+        public double Rate { get; set; }
         public DateTime? Date { get; set; }
-        public string? WorkPerformed { get; set; }
+        public string? Work { get; set; }
     }
 }
