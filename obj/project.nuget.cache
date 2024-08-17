@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "TSAus/TaQM5+FblvNKo1o0scXMT+0hmD2rL1VvqYgkPEa541Rc5fE6o5m4yzGHoJmQjs9q0fO27nkMD8Y4hT8A==",
+  "dgSpecHash": "JLIBV3TZB+3O4m3vZ9BGWOXS1uzf5GzQXIRoc/O71yKPxrVaaVZExOqFRSM6UM6ptSqruHuRA0qEN3x61GZygg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alvin\\Documents\\FreeBilling\\FreeBilling.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alvin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Alvin\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\Alvin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
