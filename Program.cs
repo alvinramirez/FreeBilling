@@ -1,7 +1,9 @@
+using FluentValidation;
 using FreeBilling.Data.Entities;
 using FreeBilling.Web.Apis;
 using FreeBilling.Web.Data;
 using FreeBilling.Web.Services;
+using FreeBilling.Web.Validators;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<IEmailService, DevTimeEmailServices>();
 
 builder.Services.AddControllers();
+
+builder.Services.AddValidatorsFromAssemblyContaining<TimeBillModelValidator>();
 
 var app = builder.Build();
 
