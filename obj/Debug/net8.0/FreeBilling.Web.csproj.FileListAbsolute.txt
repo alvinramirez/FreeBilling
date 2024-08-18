@@ -164,3 +164,5 @@ C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\runtimes\win\lib\net6.0\Sy
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBilling.Web.csproj.AssemblyReference.cache
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBill.8B4D911A.Up2Date
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
