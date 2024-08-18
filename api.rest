@@ -18,8 +18,8 @@ POST http://localhost:8888/api/timebills
 Content-Type: application/json
 
 {
-  "hoursWorked": 2.5,
-  "rate": 125.00,
+  "hoursWorked": 3.0,
+  "rate": 5000.00,
   "date": "2024-05-05",
   "work": "I did a thing...",
   "customerId": 1,
