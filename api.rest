@@ -19,7 +19,7 @@ Content-Type: application/json
 
 {
   "hoursWorked": 3.0,
-  "rate": 5000.00,
+  "rate": 225.00,
   "date": "2024-05-05",
   "work": "I did a thing...",
   "customerId": 1,
