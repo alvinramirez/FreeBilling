@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JLIBV3TZB+3O4m3vZ9BGWOXS1uzf5GzQXIRoc/O71yKPxrVaaVZExOqFRSM6UM6ptSqruHuRA0qEN3x61GZygg==",
+  "dgSpecHash": "0ff70O207mv2ovcpO786nofhaSqoSqweM8liuffvqdZ8NSbjf1ptClzv3vSRh958GHUkfLtE3Nm8Rlvp5Z7gfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alvin\\Documents\\FreeBilling\\FreeBilling.Web.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Alvin\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Alvin\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\Alvin\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\Alvin\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

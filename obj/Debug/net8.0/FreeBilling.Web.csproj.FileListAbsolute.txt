@@ -166,3 +166,5 @@ C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBilling.Web.csproj.Ass
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBill.8B4D911A.Up2Date
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.dll
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.Core.dll
