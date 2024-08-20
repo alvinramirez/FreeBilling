@@ -2,6 +2,8 @@
 using FreeBilling.Data.Entities;
 using FreeBilling.Web.Data;
 using FreeBilling.Web.Models;
+using FreeBilling.Web.Validators;
+using Mapster;
 using System.ComponentModel.DataAnnotations;
 
 namespace FreeBilling.Web.Apis
@@ -16,25 +18,7 @@ namespace FreeBilling.Web.Apis
                 .WithName("GetTimeBill");
 
             group.MapPost("", PostTimeBill)
-                .AddEndpointFilter(async (context, next) =>
-                {
-                    var validator = context.HttpContext.RequestServices.GetRequiredService<IValidator<TimeBillModel>>();
-
-                    var model = context.Arguments
-                    .OfType<TimeBillModel>()
-                    .FirstOrDefault();
-
-                    if (model is not null)
-                    {
-                        var validation = validator.Validate(model);
-
-                        if (!validation.IsValid)
-                        {
-                            return Results.ValidationProblem(validation.ToDictionary());
-                        }
-                    }
-                    return await next(context);
-                });
+                .AddEndpointFilter<ValidateEndpointFilter<TimeBillModel>>();
         }
 
         public static async Task<IResult> GetTimeBill(IBillingRepository repository, 
@@ -48,17 +32,17 @@ namespace FreeBilling.Web.Apis
         }
 
         public static async Task<IResult> PostTimeBill(IBillingRepository repository,
+            IValidator<TimeBillModel> validator,
             TimeBillModel model)
         {
-            var newEntity = new TimeBill()
+            var validation = validator.Validate(model);
+
+            if (!validation.IsValid)
             {
-                CustomerId = model.CustomerId,
-                EmployeeId = model.EmployeeId,
-                Hours = model.HoursWorked,
-                BillingRate = model.Rate,
-                Date = model.Date,
-                WorkPerformed = model.Work
-            };
+                return Results.ValidationProblem(validation.ToDictionary());
+            }
+
+            var newEntity = model.Adapt<TimeBill>();
 
             repository.AddEntity(newEntity);
             if (await repository.SaveChanges())
