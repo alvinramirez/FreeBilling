@@ -25,3 +25,9 @@ Content-Type: application/json
   "customerId": 1,
   "employeeId":1
 }
+
+###
+GET http://localhost:8888/api/customers/1/timebills
+
+###
+GET http://localhost:8888/api/customers/1/timebills/10
