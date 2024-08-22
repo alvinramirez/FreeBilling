@@ -2,65 +2,64 @@
 using FreeBilling.Web.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FreeBilling.Web.Controllers
+namespace FreeBilling.Web.Controllers;
+
+[Route("/api/[controller]")]
+public class CustomersController : ControllerBase
 {
-    [Route("/api/[controller]")]
-    public class CustomersController : ControllerBase
+    private readonly ILogger<CustomersController> logger;
+    private readonly IBillingRepository repository;
+
+    public CustomersController(ILogger<CustomersController> logger, IBillingRepository repository)
     {
-        private readonly ILogger<CustomersController> logger;
-        private readonly IBillingRepository repository;
+        this.logger = logger;
+        this.repository = repository;
+    }
 
-        public CustomersController(ILogger<CustomersController> logger, IBillingRepository repository)
+    [HttpGet("")]
+    public async Task<ActionResult<IEnumerable<Customer>>> Get(bool withAddresses = false)
+    {
+        try
         {
-            this.logger = logger;
-            this.repository = repository;
+            IEnumerable<Customer> results;
+
+            if (withAddresses)
+            {
+                results = await repository.GetCustomersWithAddresses();
+            }
+            else
+            {
+                results = await repository.GetCustomers();
+            }
+
+            return Ok(results);
         }
-
-        [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<Customer>>> Get(bool withAddresses = false)
+        catch (Exception)
         {
-            try
+            logger.LogError("Failed to get customers from database.");
+            return Problem("Failed to get customers from database.");
+        }
+    }
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Customer>> GetOne(int id)
+    {
+        try
+        {
+            var result = await repository.GetCustomer(id);
+
+            if (result is null) 
             {
-                IEnumerable<Customer> results;
-
-                if (withAddresses)
-                {
-                    results = await repository.GetCustomersWithAddresses();
-                }
-                else
-                {
-                    results = await repository.GetCustomers();
-                }
-
-                return Ok(results);
+                return NotFound();
             }
-            catch (Exception)
+            else
             {
-                logger.LogError("Failed to get customers from database.");
-                return Problem("Failed to get customers from database.");
+                return Ok(result);
             }
         }
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<Customer>> GetOne(int id)
+        catch (Exception ex)
         {
-            try
-            {
-                var result = await repository.GetCustomer(id);
-
-                if (result is null) 
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    return Ok(result);
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.LogError("Exception thrown while reading customer");
-                return Problem($"Exception thrown: {ex.Message}");
-            }
+            logger.LogError("Exception thrown while reading customer");
+            return Problem($"Exception thrown: {ex.Message}");
         }
     }
 }
