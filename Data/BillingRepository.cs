@@ -104,4 +104,22 @@ public class BillingRepository : IBillingRepository
     {
         context.Add(entity);
     }
+
+    public async Task<IEnumerable<TimeBill>> GetTimeBillsForCustomer(int id)
+    {
+        return await context.TimeBills
+            .Where(b => b.CustomerId != null && b.CustomerId == id)
+            .Include(b => b.Customer)
+            .Include(b => b.Employee)
+            .ToListAsync();
+    }
+
+    public async Task<TimeBill?> GetTimeBillForCustomer(int id, int billId)
+    {
+        return await context.TimeBills
+            .Where(b => b.CustomerId != null && b.CustomerId == id && b.Id == billId)
+            .Include(b => b.Customer)
+            .Include(b => b.Employee)
+            .FirstOrDefaultAsync    ();
+    }
 }
