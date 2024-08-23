@@ -37,9 +37,17 @@ if (builder.Environment.IsDevelopment())
 
 app.UseDeveloperExceptionPage();
 
+// Allows us to serve index.html as the default webpage
 app.UseDefaultFiles();
 
+// Allows us to serve files from wwwroot
 app.UseStaticFiles();
+
+// Add Routing
+app.UseRouting();
+
+// Add Auth Middleware
+app.UseAuthorization();
 
 app.MapRazorPages();
 
