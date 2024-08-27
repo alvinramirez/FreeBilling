@@ -1,9 +1,11 @@
 ﻿using FreeBilling.Data.Entities;
+using FreeBilling.Web.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FreeBilling.Web.Data
 {
-    public class BillingContext : DbContext
+    public class BillingContext : IdentityDbContext<TimeBillUser>
     {
         private readonly IConfiguration _config;
 
