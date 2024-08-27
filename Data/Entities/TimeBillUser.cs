@@ -1,5 +1,8 @@
-﻿namespace FreeBilling.Web.Data.Entities;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class TimeBillUser
+namespace FreeBilling.Web.Data.Entities;
+
+public class TimeBillUser : IdentityUser
 {
+    public DateTime DateOfBirth { get; set; }
 }
