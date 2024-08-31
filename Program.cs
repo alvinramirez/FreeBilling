@@ -8,6 +8,7 @@ using Mapster;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using FreeBilling.Web.Data.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BillingContextConnection") ?? throw new InvalidOperationException("Connection string 'BillingContextConnection' not found.");
