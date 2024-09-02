@@ -1,17 +1,15 @@
 using FluentValidation;
-using FreeBilling.Data.Entities;
 using FreeBilling.Web.Apis;
 using FreeBilling.Web.Data;
 using FreeBilling.Web.Services;
 using FreeBilling.Web.Validators;
 using Mapster;
 using System.Reflection;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using FreeBilling.Web.Data.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("BillingContextConnection") ?? throw new InvalidOperationException("Connection string 'BillingContextConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("BillingDb") ?? throw new InvalidOperationException("Connection string 'BillingDb' not found.");
 
 IConfigurationBuilder configBuilder = builder.Configuration;
 configBuilder.Sources.Clear();
@@ -22,7 +20,12 @@ configBuilder.AddJsonFile("appsettings.json")
     .AddCommandLine(args);
 builder.Services.AddDbContext<BillingContext>();
 
-builder.Services.AddDefaultIdentity<TimeBillUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<BillingContext>();
+builder.Services.AddDefaultIdentity<TimeBillUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequiredLength = 8;
+})
+    .AddEntityFrameworkStores<BillingContext>();
 builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 
 builder.Services.AddRazorPages();
@@ -41,9 +44,7 @@ if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.UseDeveloperExceptionPage();
-
-// Allows us to serve index.html as the default webpage
+// Allows us to serve Index.cshtml as the default webpage
 app.UseDefaultFiles();
 
 // Allows us to serve files from wwwroot
@@ -51,6 +52,7 @@ app.UseStaticFiles();
 
 // Add Routing
 app.UseRouting();
+app.UseAuthentication();
 
 // Add Auth Middleware
 app.UseAuthorization();
