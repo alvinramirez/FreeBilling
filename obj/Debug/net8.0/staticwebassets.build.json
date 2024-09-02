@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j2SBv/ggWWnw1lNflPdWSjgSt9w9dQLSJlLI6jsNTxk=",
+  "Hash": "vZ7lEZ9f0QpUOsncQCzSpFIsYIVUFXly4THQJCrBwGE=",
   "Source": "FreeBilling.Web",
   "BasePath": "_content/FreeBilling.Web",
   "Mode": "Default",
@@ -1155,25 +1155,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Alvin\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.8\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\index.html",
-      "SourceId": "FreeBilling.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\",
-      "BasePath": "_content/FreeBilling.Web",
-      "RelativePath": "index.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
       "Identity": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\site.css",

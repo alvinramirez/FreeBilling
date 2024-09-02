@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
-    },
-    {
       "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\site.css",
       "PackagePath": "staticwebassets\\site.css"
     },
