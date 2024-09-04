@@ -20,6 +20,14 @@
             <li class="mx-2 hover:text-blue-500"><a href="/">Home</a></li>
             <li class="mx-2 hover:text-blue-500"><a href="/Contact">Contact</a></li>
             <li class="mx-2 hover:text-blue-500"><a href="/Customers">Customers</a></li>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <li class="mx-2 hover:text-blue-500">@User.Identity?.Name - <a asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
+            }
+            else
+            {
+                <li class="mx-2 hover:text-blue-500"><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            }
         </ul>
     </header>
     <div class="bg-gray-400 p-2 w-full h-[calc(100vh-75px)] overflow-auto">
