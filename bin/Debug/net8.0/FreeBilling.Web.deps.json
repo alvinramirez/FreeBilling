@@ -10,9 +10,9 @@
         "dependencies": {
           "FluentValidation.DependencyInjectionExtensions": "11.9.2",
           "Mapster": "7.4.0",
-          "Microsoft.AspNet.Identity.EntityFramework": "2.2.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
           "Microsoft.AspNetCore.Identity.UI": "8.0.8",
+          "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.8",
@@ -54,18 +54,6 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.10.3.0",
             "fileVersion": "1.1000.323.51804"
-          }
-        }
-      },
-      "EntityFramework/6.1.0": {
-        "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.1.30225.0"
-          },
-          "lib/net45/EntityFramework.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.1.30225.0"
           }
         }
       },
@@ -645,26 +633,6 @@
           "lib/net7.0/Mapster.Core.dll": {
             "assemblyVersion": "1.2.1.0",
             "fileVersion": "1.2.1.0"
-          }
-        }
-      },
-      "Microsoft.AspNet.Identity.Core/2.2.4": {
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.4.50621"
-          }
-        }
-      },
-      "Microsoft.AspNet.Identity.EntityFramework/2.2.4": {
-        "dependencies": {
-          "EntityFramework": "6.1.0",
-          "Microsoft.AspNet.Identity.Core": "2.2.4"
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.4.50621"
           }
         }
       },
@@ -2231,13 +2199,6 @@
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
     },
-    "EntityFramework/6.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
-      "path": "entityframework/6.1.0",
-      "hashPath": "entityframework.6.1.0.nupkg.sha512"
-    },
     "FluentValidation/11.9.2": {
       "type": "package",
       "serviceable": true,
@@ -2615,20 +2576,6 @@
       "sha512": "sha512-11lokmfliBEMMmjeqxFGNpqGXq6tN96zFqpBmfYeahr4Ybk63oDmeJmOflsATjobYkX248g5Y62oQ2NNnZaeww==",
       "path": "mapster.core/1.2.1",
       "hashPath": "mapster.core.1.2.1.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Identity.Core/2.2.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-s3u/o3iG5h0z7Ggukwo4soPwogD56ZrYbolGxTfw41zkuG6jAXUJT/V3EThqHJXGuCNvWSdSnnwAhPfT9Sn36g==",
-      "path": "microsoft.aspnet.identity.core/2.2.4",
-      "hashPath": "microsoft.aspnet.identity.core.2.2.4.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Identity.EntityFramework/2.2.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ay5FMSwNF0tb9KiC4l4aqm7D1E6Da9nU3euI/X0UD1SuumJX7OkZ9LtZjU9xT3xmou3XLXO8DDcgrW6udSQk6Q==",
-      "path": "microsoft.aspnet.identity.entityframework/2.2.4",
-      "hashPath": "microsoft.aspnet.identity.entityframework.2.2.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.8": {
       "type": "package",

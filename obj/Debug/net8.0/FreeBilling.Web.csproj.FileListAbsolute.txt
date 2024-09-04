@@ -39,15 +39,11 @@ C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FreeBilling.Web.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FreeBilling.Web.pdb
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Azure.Identity.dll
-C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\EntityFramework.SqlServer.dll
-C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\EntityFramework.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.Core.dll
-C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

@@ -53,15 +53,15 @@
               "target": "Package",
               "version": "[7.4.0, )"
             },
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
             },
