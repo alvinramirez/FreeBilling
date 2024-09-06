@@ -26,6 +26,10 @@ builder.Services.AddDefaultIdentity<TimeBillUser>(options =>
     options.Password.RequiredLength = 8;
 })
     .AddEntityFrameworkStores<BillingContext>();
+
+builder.Services.AddAuthentication()
+    .AddJwtBearer();
+
 builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 
 builder.Services.AddRazorPages();
