@@ -20,7 +20,7 @@ configBuilder.AddJsonFile("appsettings.json")
     .AddCommandLine(args);
 builder.Services.AddDbContext<BillingContext>();
 
-builder.Services.AddDefaultIdentity<TimeBillUser>(options =>
+builder.Services.AddIdentityApiEndpoints<TimeBillUser>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequiredLength = 8;
@@ -66,5 +66,8 @@ app.MapRazorPages();
 TimeBillsApi.Register(app);
 
 app.MapControllers();
+
+app.MapGroup("api/auth")
+    .MapIdentityApi<TimeBillUser>();
 
 app.Run();
