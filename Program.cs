@@ -7,6 +7,7 @@ using Mapster;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using FreeBilling.Web.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BillingDb") ?? throw new InvalidOperationException("Connection string 'BillingDb' not found.");
@@ -28,7 +29,14 @@ builder.Services.AddIdentityApiEndpoints<TimeBillUser>(options =>
     .AddEntityFrameworkStores<BillingContext>();
 
 builder.Services.AddAuthentication()
-    .AddJwtBearer();
+    .AddBearerToken();
+
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("api", cfg =>
+    {
+        cfg.RequireAuthenticatedUser();
+        cfg.AddAuthenticationSchemes(IdentityConstants.BearerScheme);
+    });
 
 builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 
