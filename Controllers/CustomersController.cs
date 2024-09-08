@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FreeBilling.Web.Controllers;
 
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+[Authorize("api")]
 [Route("/api/[controller]")]
 public class CustomersController : ControllerBase
 {
