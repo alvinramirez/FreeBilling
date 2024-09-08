@@ -44,6 +44,7 @@ C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.Dependenc
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.Core.dll
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -319,4 +320,3 @@ C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\refint\FreeBilling.Web.dll
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBilling.Web.pdb
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\FreeBilling.Web.genruntimeconfig.cache
 C:\Users\Alvin\Documents\FreeBilling\obj\Debug\net8.0\ref\FreeBilling.Web.dll
-C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
