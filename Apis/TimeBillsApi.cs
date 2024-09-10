@@ -12,13 +12,12 @@ namespace FreeBilling.Web.Apis
     {
         public static void Register(WebApplication app)
         {
-            var group = app.MapGroup("/api/timebills");
+            app.MapGet("/api/timebills/{id:int}", GetTimeBill)
+                .WithName("GetTimeBill")
+                .RequireAuthorization("ApiPolicy");
 
-            group.MapGet("{id:int}", GetTimeBill)
-                .WithName("GetTimeBill");
-
-            group.MapPost("", PostTimeBill)
-                .AddEndpointFilter<ValidateEndpointFilter<TimeBillModel>>();
+            app.MapPost("api/timebills", PostTimeBill)
+                .RequireAuthorization("ApiPolicy");
         }
 
         public static async Task<IResult> GetTimeBill(IBillingRepository repository, 
