@@ -8,6 +8,10 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using FreeBilling.Web.Data.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.CodeAnalysis.FlowAnalysis;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BillingDb") ?? throw new InvalidOperationException("Connection string 'BillingDb' not found.");
@@ -29,7 +33,25 @@ builder.Services.AddIdentityApiEndpoints<TimeBillUser>(options =>
     .AddEntityFrameworkStores<BillingContext>();
 
 builder.Services.AddAuthentication()
-    .AddBearerToken();
+    .AddJwtBearer(cfg => 
+    {
+        cfg.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidIssuer = builder.Configuration["Token:Issuer"],
+            ValidAudience = builder.Configuration["Token.Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Token:Key"]))
+        };
+    });
+
+builder.Services.AddAuthorization(cfg =>
+{
+    cfg.AddPolicy("ApiPolicy", bldr =>
+    {
+        bldr.RequireAuthenticatedUser();
+        bldr.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
+    });
+});
 
 builder.Services.AddAuthorizationBuilder()
     .AddPolicy("api", cfg =>
