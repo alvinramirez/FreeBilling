@@ -122,4 +122,11 @@ public class BillingRepository : IBillingRepository
             .Include(b => b.Employee)
             .FirstOrDefaultAsync    ();
     }
+
+    public async Task<Employee?> GetEmployee(string name)
+    {
+        return await context.Employees
+            .Where(e => e.Email == name)
+            .FirstOrDefaultAsync();
+    }
 }

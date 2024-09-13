@@ -5,6 +5,7 @@ using FreeBilling.Web.Models;
 using FreeBilling.Web.Validators;
 using Mapster;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace FreeBilling.Web.Apis
 {
@@ -32,7 +33,8 @@ namespace FreeBilling.Web.Apis
 
         public static async Task<IResult> PostTimeBill(IBillingRepository repository,
             IValidator<TimeBillModel> validator,
-            TimeBillModel model)
+            TimeBillModel model,
+            ClaimsPrincipal user)
         {
             var validation = validator.Validate(model);
 
@@ -42,6 +44,12 @@ namespace FreeBilling.Web.Apis
             }
 
             var newEntity = model.Adapt<TimeBill>();
+
+            var employee = await repository.GetEmployee(user.Identity?.Name!);
+
+            if (employee is null) return Results.BadRequest("No employee with user's email");
+
+            newEntity.EmployeeId = employee.Id;
 
             repository.AddEntity(newEntity);
             if (await repository.SaveChanges())

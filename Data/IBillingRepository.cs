@@ -11,6 +11,7 @@ public interface IBillingRepository
     Task<IEnumerable<TimeBill>> GetTimeBillsForCustomer(int id);
     Task <TimeBill?> GetTimeBillForCustomer(int id, int billId);
     Task<IEnumerable<Employee>> GetEmployees();
+    Task<Employee?> GetEmployee(string name);
     void AddEntity<T>(T entity) where T : notnull;
     Task<bool> SaveChanges();
 }
