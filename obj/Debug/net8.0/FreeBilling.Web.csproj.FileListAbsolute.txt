@@ -31,6 +31,7 @@ C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\nuget.conf
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\appsettings.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\jsconfig.json
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\package-lock.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\package.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\package-lock.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\package.json
