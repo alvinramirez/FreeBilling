@@ -27,7 +27,7 @@ builder.Services.AddDbContext<BillingContext>();
 
 builder.Services.AddIdentityApiEndpoints<TimeBillUser>(options =>
 {
-    options.SignIn.RequireConfirmedAccount = false;
+    options.SignIn.RequireConfirmedEmail = false;
     options.Password.RequiredLength = 8;
 })
     .AddEntityFrameworkStores<BillingContext>();
