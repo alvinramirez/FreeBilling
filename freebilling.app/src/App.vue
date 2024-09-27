@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <header>
+  <header class="flex text-red-900">
       <h3>Our App</h3>
   </header>
 
