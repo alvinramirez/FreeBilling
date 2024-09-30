@@ -1,4 +1,10 @@
 <script setup>
+    let name = "Alvin";
+    function changeMe()
+    {
+        name = "Ivis";
+        alert(name);
+    }
 </script>
 
 <template>
@@ -8,5 +14,7 @@
 
   <main>
       <h1>Hello from Vue</h1>
+      <div>{{ name }}</div>
+      <button class="btn" @click="changeMe">Change Me</button>
   </main>
 </template>
