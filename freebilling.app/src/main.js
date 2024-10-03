@@ -1,4 +1,4 @@
-import '../../FreeBilling.Web/wwwroot/site.css'
+import '../../wwwroot/site.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
