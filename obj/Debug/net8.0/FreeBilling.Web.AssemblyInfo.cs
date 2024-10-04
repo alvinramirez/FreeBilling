@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FreeBilling.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0df29fde7dcc7f56a2d9722a7141e4ab595a16cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f4c9f999e409f9a106fcfc9022c4433ee027a8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FreeBilling.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FreeBilling.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
