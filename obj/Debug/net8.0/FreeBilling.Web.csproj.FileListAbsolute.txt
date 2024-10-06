@@ -27,6 +27,7 @@ C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\r
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\bin\Debug\net8.0\FreeBilling.Web.staticwebassets.runtime.json
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.RazorAssemblyInfo.cache
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.RazorAssemblyInfo.cs
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\.filenesting.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\nuget.config
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\appsettings.json
