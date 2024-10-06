@@ -1,11 +1,11 @@
 <script setup>
-    import { ref } from "vue";
+    import { ref, reactive } from "vue";
 
     const name = ref("Alvin");
 
     const nancy = ref("Nancy Smith");
 
-    const bills = [
+    const bills = reactive([
         {
             "hoursWorked": 3.0,
             "rate": 225.00,
@@ -30,7 +30,7 @@
             "customerId": 1,
             "employeeId": 1
         }
-    ];
+    ]);
 
     function changeMe()
     {
@@ -48,6 +48,8 @@
             work: "More work",
             billDate: "2023-05-08"
         });
+
+        console.log(bills.length);
     }
 </script>
 
