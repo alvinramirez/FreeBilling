@@ -37,6 +37,18 @@
         name.value += "+";
         //alert(name);
     }
+
+    function newItem()
+    {
+        bills.push({
+            customerId: 1,
+            employeeId: 1,
+            hoursWorked: 5.0,
+            rate: 114,
+            work: "More work",
+            billDate: "2023-05-08"
+        });
+    }
 </script>
 
 <template>
@@ -49,6 +61,7 @@
       <div>{{ name }}</div>
       <button class="btn" @click="changeMe">Change Me</button>
       <img src="/nancy.jpg" :alt="nancy" :title="nancy"/>
+      <button class="btn" @click="newItem">New Item</button>
       <table>
           <thead>
               <tr>
