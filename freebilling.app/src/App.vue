@@ -49,5 +49,21 @@
       <div>{{ name }}</div>
       <button class="btn" @click="changeMe">Change Me</button>
       <img src="/nancy.jpg" :alt="nancy" :title="nancy"/>
+      <table>
+          <thead>
+              <tr>
+                  <td>Hours</td>
+                  <td>Date</td>
+                  <td>Description</td>
+              </tr>
+          </thead>
+          <tbody>
+              <tr v-for="b in bills">
+                  <td>{{ b.hoursWorked }}</td>
+                  <td>{{ b.date }}</td>
+                  <td>{{ b.work }}</td>
+              </tr>
+          </tbody>
+      </table>
   </main>
 </template>
