@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive } from "vue";
+    import { ref, reactive, computed } from "vue";
 
     const name = ref("Alvin");
 
@@ -32,6 +32,11 @@
         }
     ]);
 
+    const total = computed(() => {
+        return bills.map(b => b.rate * b.hoursWorked)
+                    .reduce((b, t) => t + b, 0)    ;
+    })
+
     function changeMe()
     {
         name.value += "+";
@@ -46,7 +51,7 @@
             hoursWorked: 5.0,
             rate: 114,
             work: "More work",
-            billDate: "2023-05-08"
+            date: "2023-05-08"
         });
 
         console.log(bills.length);
@@ -80,5 +85,6 @@
               </tr>
           </tbody>
       </table>
+      <div>Total: {{ total }}</div>
   </main>
 </template>
