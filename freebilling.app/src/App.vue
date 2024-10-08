@@ -1,5 +1,6 @@
 <script setup>
     import { ref, reactive, computed } from "vue";
+    import { formatMoney } from "./formatters";
 
     const name = ref("Alvin");
 
@@ -85,6 +86,6 @@
               </tr>
           </tbody>
       </table>
-      <div>Total: {{ total }}</div>
+      <div>Total: {{ formatMoney(total) }}</div>
   </main>
 </template>
