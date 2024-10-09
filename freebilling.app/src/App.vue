@@ -68,7 +68,7 @@
       <h1>Hello from Vue</h1>
       <div>{{ name }}</div>
       <button class="btn" @click="changeMe">Change Me</button>
-      <img src="/nancy.jpg" :alt="nancy" :title="nancy"/>
+      <img src="../../imgs/nancy.jpg" :alt="nancy" :title="nancy"/>
       <button class="btn" @click="newItem">New Item</button>
       <table>
           <thead>
