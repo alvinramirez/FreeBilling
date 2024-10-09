@@ -1,6 +1,26 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\imgs\\betty.jpg",
+      "PackagePath": "staticwebassets\\imgs\\betty.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\imgs\\john.jpg",
+      "PackagePath": "staticwebassets\\imgs\\john.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\imgs\\logo.png",
+      "PackagePath": "staticwebassets\\imgs\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\imgs\\mary.jpg",
+      "PackagePath": "staticwebassets\\imgs\\mary.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\imgs\\nancy.jpg",
+      "PackagePath": "staticwebassets\\imgs\\nancy.jpg"
+    },
+    {
       "Id": "C:\\Users\\Alvin\\Documents\\FreeBilling\\wwwroot\\site.css",
       "PackagePath": "staticwebassets\\site.css"
     },
