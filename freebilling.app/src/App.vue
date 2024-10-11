@@ -1,6 +1,7 @@
 <script setup>
-    import { ref, reactive, computed } from "vue";
+    import { ref, reactive, computed, onMounted } from "vue";
     import { formatMoney } from "./formatters";
+    import axios from "axios";
 
     const name = ref("Alvin");
 
@@ -8,33 +9,41 @@
 
     const bills = reactive([
         {
-            "hoursWorked": 3.0,
-            "rate": 225.00,
-            "date": "2024-05-05",
-            "work": "I did a thing...",
-            "customerId": 1,
-            "employeeId": 1
-        },
-        {
-            "hoursWorked": 2.0,
-            "rate": 105.00,
-            "date": "2024-05-06",
-            "work": "I did another thing...",
-            "customerId": 1,
-            "employeeId": 1
-        },
-        {
-            "hoursWorked": 9.0,
-            "rate": 140.00,
-            "date": "2024-05-07",
-            "work": "I finish a thing...",
-            "customerId": 1,
-            "employeeId": 1
+        //    "hoursWorked": 3.0,
+        //    "rate": 225.00,
+        //    "date": "2024-05-05",
+        //    "work": "I did a thing...",
+        //    "customerId": 1,
+        //    "employeeId": 1
+        //},
+        //{
+        //    "hoursWorked": 2.0,
+        //    "rate": 105.00,
+        //    "date": "2024-05-06",
+        //    "work": "I did another thing...",
+        //    "customerId": 1,
+        //    "employeeId": 1
+        //},
+        //{
+        //    "hoursWorked": 9.0,
+        //    "rate": 140.00,
+        //    "date": "2024-05-07",
+        //    "work": "I finish a thing...",
+        //    "customerId": 1,
+        //    "employeeId": 1
         }
     ]);
 
+    onMounted(async () => {
+        const result = await axios("/api/customers/1/timebills");
+        if (result.status === 200)
+        {
+            bills.splice(0, bills.length, ...result.data);
+        }
+    });
+
     const total = computed(() => {
-        return bills.map(b => b.rate * b.hoursWorked)
+        return bills.map(b => b.billingRate * b.hours)
                     .reduce((b, t) => t + b, 0)    ;
     })
 
@@ -80,9 +89,9 @@
           </thead>
           <tbody>
               <tr v-for="b in bills">
-                  <td>{{ b.hoursWorked }}</td>
+                  <td>{{ b.hours }}</td>
                   <td>{{ b.date }}</td>
-                  <td>{{ b.work }}</td>
+                  <td>{{ b.workPerformed }}</td>
               </tr>
           </tbody>
       </table>
