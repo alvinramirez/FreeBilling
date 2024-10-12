@@ -2,10 +2,13 @@
     import { ref, reactive, computed, onMounted } from "vue";
     import { formatMoney } from "./formatters";
     import axios from "axios";
+    import WaitCursor from "./components/WaitCursor.vue";
 
     const name = ref("Alvin");
 
     const nancy = ref("Nancy Smith");
+
+    const isBusy = ref(false);
 
     const bills = reactive([
         {
@@ -35,10 +38,18 @@
     ]);
 
     onMounted(async () => {
-        const result = await axios("/api/customers/1/timebills");
-        if (result.status === 200)
-        {
-            bills.splice(0, bills.length, ...result.data);
+        try {
+            isBusy.value = true;
+            const result = await axios("/api/customers/1/timebills");
+            isBusy.value = false;
+            if (result.status === 200)
+            {
+                bills.splice(0, bills.length, ...result.data);
+            }
+        } catch {
+            console.log("Failed");
+        } finally {
+            setTimeout(() => isBusy.value = false, 1000);
         }
     });
 
@@ -75,10 +86,11 @@
 
   <main>
       <h1>Hello from Vue</h1>
-      <div>{{ name }}</div>
+      <WaitCursor :busy="isBusy" msg="Please wait..."></WaitCursor>
+      <!--<div>{{ name }}</div>
       <button class="btn" @click="changeMe">Change Me</button>
       <img src="../../imgs/nancy.jpg" :alt="nancy" :title="nancy"/>
-      <button class="btn" @click="newItem">New Item</button>
+      <button class="btn" @click="newItem">New Item</button>-->
       <table>
           <thead>
               <tr>
