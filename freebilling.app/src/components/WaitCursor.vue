@@ -5,6 +5,13 @@
         "msg": { type: String, default: "Loading..." }
     });
 
+    const emits = defineEmits(["onHidden"]);
+
+    function hide()
+    {
+        emits.emit("onHidden", "hello");
+    }
+
 </script>
 
 <template>
