@@ -1,6 +1,6 @@
 <template>
-    <ul class="text-blue-900 font-bold flex">
-        <li><RouterLink :to="{ name: 'Home' }">Home</RouterLink></li>
+    <ul class="text-blue-900 font-bold flex justify-end">
+        <li class="mr-2"><RouterLink :to="{ name: 'Home' }">Home</RouterLink></li>
         <li><RouterLink :to="{ name: 'Billing' }">Billing</RouterLink></li>
     </ul>
 
