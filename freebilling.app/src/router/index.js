@@ -1,16 +1,17 @@
 // router
 import HomeView from "@/views/HomeView.vue";
 import BillingView from "@/views/BillingView.vue";
-import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {
-        name: "Home",
         path: "/",
+        name: "Home",
         component: HomeView
     },
     {
         path: "/billing",
+        name: "Billing",
         component: BillingView
     }
 
