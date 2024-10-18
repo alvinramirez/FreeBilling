@@ -97,6 +97,9 @@ TimeBillsApi.Register(app);
 
 app.MapControllers();
 
+// No route was found, go to the vue app
+app.MapFallbackToPage("/customerBilling");
+
 app.MapGroup("api/auth")
     .MapIdentityApi<TimeBillUser>();
 
