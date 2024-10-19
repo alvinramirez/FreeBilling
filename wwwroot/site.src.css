@@ -7,7 +7,7 @@
         @apply font-bold;
     }
 
-    input[type=text], input[type=email], input[type=password], textarea, select {
+    input[type=text], input[type=email], input[type=number], input[type=password], textarea, select {
         @apply w-full p-1 text-lg border-2 rounded border-gray-200;
     }
 
