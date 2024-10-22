@@ -1,10 +1,14 @@
 <script setup>
     import { ref } from "vue";
     import axios from "axios";
+    import state from "@/state";
+    import { useRouter } from "vue-router";
 
     const username = ref("");
     const password = ref("");
     const message = ref("");
+
+    const router = useRouter();
 
     async function login() {
         try {
@@ -12,6 +16,8 @@
                 username: username.value,
                 password: password.value
             })
+            state.token = result.data.token;
+            router.push("/");
         } catch {
             message.value = "Wrong username or password";
         }
@@ -21,7 +27,7 @@
 <template>
     <div class="w-96 mx-auto p-6 bg-white shadow-md rounded">
         <h3 class="text-2x1 mb-4 text-center">Login</h3>
-        <form novalidate @submit="login">
+        <form novalidate @submit.prevent="login">
 
         <div v-if="message" class="mb-4 text-red-500 text-center">{{ message }}</div>
 
