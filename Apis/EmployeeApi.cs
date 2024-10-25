@@ -2,7 +2,7 @@
 
 namespace FreeBilling.Web.Apis
 {
-    public static class EmployeeApis
+    public static class EmployeeApi
     {
         public static void Register(WebApplication app)
         {
