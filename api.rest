@@ -41,5 +41,11 @@ POST http://localhost:8888/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "alvin.ramirez48@gmail.com"
+  "email": "alvin.ramirez48@gmail.com",
+  "password": "Test2024*"
 }
+
+###
+
+GET http://localhost:8888/api/employees
+Authorization: Bearer CfDJ8JRYk99gInNLgoNx0c1AMG6ihGHMQtenOya5G4AAXXPiqkw096ZBD_CuvmW6_oXFTzJJLmyXgAHca7tBYXLGZNMFMELcOM-Jx04TCouYF2EZNalfCqA0Uts3a8Ac48OuaKWDgKBYgcFPyUbo8dq-N1ze1OPlqxaiffGLSCuhDxEaIe2n8ZpMddrMQeGZV-8Fvtj7woPXhVFs5koNRQFbcA9U1YEQ8tEtz8LysRN8ZfUWEV2CXdiM8x-dwodc7LtY6SKhqLsR16Wx53t4IMvd2af6ZdoMb44BU4zbhaYJfCiXnUi4wtbUHsEV31Ge60er2kklJvw8hNr6dPNyyalVLOrIQs1qYqcknX4F8BorIOl0MuiPXsfcZuOrKS6x9D0-OXgfgmMDHC_npX0a1v5bu5zTb9bDZP_cMEEk6_ex3miiSHZFdBIRUcqPiK51agNTsIan_6f8kqPSq54wuyGIk3qxVvpRpXWRNOj5Su41QDYZobs2zSUQabmoX6IsorcACk40Q9tOjN7x1nE827fmINBbTt7CSS3gOOCYLGFsAF9svHF_odbvwSCOLIYwqmH6NKdLBMDmf_mZCxnf3DPODPfEaVwlDrHA8kJu8E9EyIHM2lOjB-PiA4z9pKeycZ7wBVA9Oz0H-j_CcCV8j0ewpquySlvRAwXbNhEQRQwtWFuG-RCRq4b9K007eyN9JP_QhiTg_77NcHSqCvlnZk4286U
