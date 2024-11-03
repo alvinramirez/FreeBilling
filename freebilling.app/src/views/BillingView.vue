@@ -1,8 +1,34 @@
 <script setup>
-    import { ref } from "vue";
-    const bill = ref({});
+    import { ref, reactive, onMounted } from "vue";
+    import axios from "axios"; 
+    import state from "@/state";
+    import { useRouter } from "vue-router";
 
+    const router = useRouter();
+    const bill = ref({});
+    const employees = reactive([]);
     const message = ref("");
+
+    onMounted((async) => {
+        try {
+            if (!state.token) 
+            
+            {
+                router.push("/login");
+            }
+
+            const result = axios.get("/api/employees",{
+                headers: {
+                    "authorization": 'Bearer: ${state.token'
+                }
+            });
+            employees.splice(0, employees.length, ...result.data);
+
+        } catch (e) {
+            message.value = e;
+        }
+    });
+
 </script>
 
 <template>
@@ -16,10 +42,7 @@
             <textarea rows="4" name="workPerformed" id="workPerformed" v-model="bill.work"></textarea>
             <label for="employee">Employee</label>
             <select id="employee" name="client" v-model="bill.employeeId">
-                <option>Pick One...</option>
-                <option value="1">Dave</option>
-                <option value="2">Phil</option>
-                <option value="3">Hank</option>
+                <option v-for="e in employee" :accesskey="e.id" :value="e.id">{{ e.name }}</option>
             </select>
             <label for="rate">Rate</label>
             <input type="number" id="rate" v-model="bill.rate"/>
