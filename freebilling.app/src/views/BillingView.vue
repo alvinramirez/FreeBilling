@@ -9,25 +9,24 @@
     const employees = reactive([]);
     const message = ref("");
 
-    onMounted((async) => {
-        try {
-            if (!state.token) 
-            
-            {
-                router.push("/login");
-            }
-
-            const result = axios.get("/api/employees",{
-                headers: {
-                    "authorization": 'Bearer: ${state.token'
-                }
-            });
-            employees.splice(0, employees.length, ...result.data);
-
-        } catch (e) {
-            message.value = e;
+    onMounted(async () => {
+    try {
+        if (!state.token) {
+            router.push("/login");
         }
-    });
+
+        const result = await axios.get("/api/employees", {
+            headers: {
+                "authorization": `Bearer ${state.token}`
+            }
+        });
+        employees.splice(0, employees.length, ...result.data);
+
+    } catch (e) {
+        message.value = e;
+    }
+});
+
 
 </script>
 
@@ -42,7 +41,7 @@
             <textarea rows="4" name="workPerformed" id="workPerformed" v-model="bill.work"></textarea>
             <label for="employee">Employee</label>
             <select id="employee" name="client" v-model="bill.employeeId">
-                <option v-for="e in employee" :accesskey="e.id" :value="e.id">{{ e.name }}</option>
+                <option v-for="e in employees" :accesskey="e.id" :value="e.id">{{ e.name }}</option>
             </select>
             <label for="rate">Rate</label>
             <input type="number" id="rate" v-model="bill.rate"/>
