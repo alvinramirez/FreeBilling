@@ -23,7 +23,12 @@
         employees.splice(0, employees.length, ...result.data);
 
     } catch (e) {
-        message.value = e;
+        if (e.response && e.response.status === 401) {
+        message.value = "Unauthorized: Por favor intentalo otra vez.";
+        router.push("/login");
+    } else {
+        message.value = e.message || "Ha ocurrido un error.";
+    }
     }
 });
 
