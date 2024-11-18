@@ -7,6 +7,7 @@
     const router = useRouter();
     const bill = ref({});
     const employees = reactive([]);
+    const customers = reactive([]);
     const message = ref("");
 
     onMounted(async () => {
@@ -15,12 +16,19 @@
             router.push("/login");
         }
 
-        const result = await axios.get("/api/employees", {
+        const employeeResult = await axios.get("/api/employees", {
             headers: {
                 "authorization": `Bearer ${state.token}`
             }
         });
-        employees.splice(0, employees.length, ...result.data);
+        employees.splice(0, employees.length, ...employeeResult.data);
+
+        const customerResult = await axios.get("/api/customers", {
+            headers: {
+                "authorization": `Bearer ${state.token}`
+            }
+        });
+        employees.splice(0, customers.length, ...customerResult.data);
 
     } catch (e) {
         if (e.response && e.response.status === 401) {
@@ -53,9 +61,7 @@
             <label for="client">Client</label>
             <select id="client" name="client" v-model="bill.clientId">
                 <option>Pick One...</option>
-                <option value="1">Smith Towing</option>
-                <option value="2">Jakes Mufflers</option>
-                <option value="3">Paintorama</option>
+                <option v-for="c in customers" :value="c.Id" :key="c.Id">{{ c.companyName}}</option>
             </select>
             <div class="mt-2">
                 <button type="submit" class="bg-green-800 hover:bg-green-700 mr-2">Save</button>
