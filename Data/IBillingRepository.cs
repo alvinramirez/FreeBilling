@@ -14,4 +14,5 @@ public interface IBillingRepository
     Task<Employee?> GetEmployee(string name);
     void AddEntity<T>(T entity) where T : notnull;
     Task<bool> SaveChanges();
+    Task<object?> GetAuth();
 }
