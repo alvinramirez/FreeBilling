@@ -129,4 +129,9 @@ public class BillingRepository : IBillingRepository
             .Where(e => e.Email == name)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<object?> GetAuth()
+    {
+        return await Task.FromResult<object?>(null);
+    }
 }
