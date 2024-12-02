@@ -5,6 +5,6 @@ export default reactive({
     token: "",
     customers: [],
     employees: [],
-    timebills: [],
+    timeBills: [],
     currentCustomer: null
 })
