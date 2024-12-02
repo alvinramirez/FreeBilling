@@ -3,6 +3,7 @@
     import { formatMoney } from "@/formatters";
     import axios from "axios";
     import WaitCursor from "@/components/WaitCursor.vue";
+    import state from "@/state";
 
     const name = ref("Alvin");
 
@@ -44,7 +45,7 @@
             isBusy.value = false;
             if (result.status === 200)
             {
-                bills.splice(0, bills.length, ...result.data);
+                state.timeBills.splice(0, state.timeBills.length, ...result.data);
             }
         } catch {
             console.log("Failed");
@@ -54,8 +55,8 @@
     });
 
     const total = computed(() => {
-        return bills.map(b => b.billingRate * b.hours)
-                    .reduce((b, t) => t + b, 0)    ;
+        return state.timeBills.map(b => b.billingRate * b.hours)
+                    .reduce((b, t) => t + b, 0);
     })
 
     function changeMe()
@@ -66,16 +67,16 @@
 
     function newItem()
     {
-        bills.push({
+        state.timeBills.push({
             customerId: 1,
             employeeId: 1,
             hoursWorked: 5.0,
             rate: 114,
             work: "More work",
-            date: "2023-05-08"
+            date: "2024-05-08"
         });
 
-        console.log(bills.length);
+        console.log(state.timeBills.length);
     }
 </script>
 
@@ -100,10 +101,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="b in bills">
+                <tr v-for="b in state.timeBills">
                     <td>{{ b.hours }}</td>
                     <td>{{ b.date }}</td>
                     <td>{{ b.workPerformed }}</td>
+                    <td>{{ b.billingRate }}</td>
+                    <td>{{ b.employee.name }}</td>
                 </tr>
             </tbody>
         </table>
