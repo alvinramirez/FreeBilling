@@ -13,29 +13,10 @@ GET http://localhost:8888/api/customers/3
 GET http://localhost:8888/api/timebills/2
 
 ###
-
-POST http://localhost:8888/api/timebills
-Content-Type: application/json
-{
-  "hoursWorked": 3.0,
-  "rate": 225.00,
-  "date": "2024-05-05",
-  "work": "I did a thing...",
-  "customerId": 1,
-  "employeeId": 1
-}
-
-###
 GET http://localhost:8888/api/customers/1/timebills
 
 ###
 GET http://localhost:8888/api/timebills/2
 
 ###
-
-POST http://localhost:8888/api/auth/login
-Content-Type: application/json
-
-###
-
 GET http://localhost:8888/api/employees
