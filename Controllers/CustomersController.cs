@@ -1,6 +1,5 @@
 ﻿using FreeBilling.Data.Entities;
 using FreeBilling.Web.Data;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
