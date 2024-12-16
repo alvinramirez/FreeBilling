@@ -38,6 +38,23 @@ builder.Services.AddAuthorizationBuilder()
         cfg.AddAuthenticationSchemes(IdentityConstants.BearerScheme);
     });
 
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "dotnet-user-jwts",
+            ValidAudience = "http://localhost:8888",
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes("ThisIsASecretKeyForJwtTokenGeneration123!")
+            )
+        };
+    });
+
 builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 
 builder.Services.AddRazorPages();
