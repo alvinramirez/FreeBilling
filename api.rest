@@ -1,5 +1,5 @@
 GET http://localhost:8888/api/customers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFsdmluIiwic3ViIjoiQWx2aW4iLCJqdGkiOiJmOWYwMTMwNSIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjMyMzY4IiwiaHR0cHM6Ly9sb2NhbGhvc3Q6MCIsImh0dHA6Ly9sb2NhbGhvc3Q6ODg4OCJdLCJuYmYiOjE3MzQ0NjU5MjQsImV4cCI6MTc0MjI0MTkyNCwiaWF0IjoxNzM0NDY1OTI2LCJpc3MiOiJkb3RuZXQtdXNlci1qd3RzIn0.w8uaKdopR8ddvYAcCz7oRFLRXAN5qFeiiYDNY7XpPQA
+Authorization: Bearer CfDJ8FNl7_BEFLxMj1laFgISwGUQtaZC01bScRB-5nT-rgl3gT8URhELugGMCTxPVbsAJev8G8Cmwh9k5voSPKV9gnZh31vZ0eGYxIsRZGLHWR9r0Xb4LVTRR2GsA0rinTjEE1Ta5q4nYBXRqQI_vWzj985ktcrc1mZ7jdHCOZqWH4SmeS7p1Ckh_Bd3NZBrzLpiuaB24MacdvCd4a3_ym1sgLm2_GD_nKiIMGGdAddPyXacHGpyWbDyvXXNHV2_j-RI_DY-9AzCdAU14r8BvOMtO0O2b0xEVmG1ujFX50h9Y4crVQAKH141QtxL8CQCUxwIDF09UafTpT1WAxRSbMqZ9zNcP4-BllFqkCMuC0OdaWue1PeQEmZj-Rx7XKCjpRJAWuQhVKtOoxcZECqa0Q1sI-_36wR_m27_KgKnML5AXFBSkW-3TXRbs7j0udY6j_TGhgGQsa9D73smqPKqFHYcTeeqv0wt1sH8rcRSlp5W7LwExR-hY7193F8Spz6bbYoygZ1a3DUwJsACZJa4RYJnOK1w4eD4lMtrRiMGQi_96ZPlZ5ppHeVtQPBbqYfBp3Op0C2kfj1TO8IOR3zJFYIjorxLBB7shFyKJ8fs2vEyADFaMn0gCDfF7jY19hTzi3-GjA9ktoEa1anmmX7Xa_X-tPQobwSrRdS733k-ghdKfFd59mR4LrWUh0FzCCkvkqLE-kbHRD4BFKK3ICqGEdkFHmY
 ###
 
 GET http://localhost:8888/api/customers?withAddresses=true
@@ -20,3 +20,13 @@ GET http://localhost:8888/api/timebills/2
 
 ###
 GET http://localhost:8888/api/employees
+
+###
+
+POST http://localhost:8888/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "alvin.ramirez48@gmail.com",
+  "password": "Test2024*"
+}
