@@ -28,7 +28,6 @@ C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\bin\Debug\net8.0\F
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.RazorAssemblyInfo.cache
 C:\Users\Alvin\Documents\projects\FreeBilling\FreeBilling.Web\obj\Debug\net8.0\FreeBilling.Web.RazorAssemblyInfo.cs
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\nuget.config
-C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\.filenesting.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\appsettings.json
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\freebilling.app\jsconfig.json
@@ -49,6 +48,7 @@ C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\FluentValidation.Dependenc
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Mapster.Core.dll
+C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Alvin\Documents\FreeBilling\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
