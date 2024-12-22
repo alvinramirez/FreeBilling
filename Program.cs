@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.CodeAnalysis.FlowAnalysis;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BillingDb") ?? throw new InvalidOperationException("Connection string 'BillingDb' not found.");
@@ -54,6 +55,15 @@ builder.Services.AddAuthentication("Bearer")
             )
         };
     });
+
+builder.Services.AddAuthorization(cfg =>
+{
+    cfg.AddPolicy("ApiPolicy", bldr =>
+    {
+        bldr.RequireAuthenticatedUser();
+        bldr.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
+    });
+});
 
 builder.Services.AddScoped<IBillingRepository, BillingRepository>();
 
