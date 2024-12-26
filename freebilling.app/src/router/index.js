@@ -28,4 +28,14 @@ const router = createRouter({
     history: createWebHistory()
 });
 
+router.beforeEach((to) => {
+    if (to.name !== "Login")
+    {  
+        if (!state.token)
+        {
+            return { name: "Login"}
+        }
+    }
+});
+
 export default router;
