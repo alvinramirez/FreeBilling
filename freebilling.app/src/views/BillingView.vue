@@ -12,9 +12,6 @@
 
     onMounted(async () => {
     try {
-        if (!state.token) {
-            router.push("/login");
-        }
 
         const employeeResult = await axios.get("/api/employees", {
             headers: {
