@@ -92,12 +92,14 @@
         <button class="btn" @click="changeMe">Change Me</button>
         <img src="../../imgs/nancy.jpg" :alt="nancy" :title="nancy"/>
         <button class="btn" @click="newItem">New Item</button>-->
-        <table>
+        <table class="w-full">
             <thead>
                 <tr>
                     <td>Hours</td>
                     <td>Date</td>
                     <td>Description</td>
+                    <td>Rate</td>
+                    <td>Employee</td>
                 </tr>
             </thead>
             <tbody>
