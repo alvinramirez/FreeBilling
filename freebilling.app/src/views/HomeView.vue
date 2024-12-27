@@ -11,33 +11,6 @@
 
     const isBusy = ref(false);
 
-    const bills = reactive([
-        {
-        //    "hoursWorked": 3.0,
-        //    "rate": 225.00,
-        //    "date": "2024-05-05",
-        //    "work": "I did a thing...",
-        //    "customerId": 1,
-        //    "employeeId": 1
-        //},
-        //{
-        //    "hoursWorked": 2.0,
-        //    "rate": 105.00,
-        //    "date": "2024-05-06",
-        //    "work": "I did another thing...",
-        //    "customerId": 1,
-        //    "employeeId": 1
-        //},
-        //{
-        //    "hoursWorked": 9.0,
-        //    "rate": 140.00,
-        //    "date": "2024-05-07",
-        //    "work": "I finish a thing...",
-        //    "customerId": 1,
-        //    "employeeId": 1
-        }
-    ]);
-
     onMounted(async () => {
         try {
             isBusy.value = true;
