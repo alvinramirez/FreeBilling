@@ -22,7 +22,7 @@
 
         const customerResult = await axios.get("/api/customers", {
             headers: {
-                "authorization": `Bearer ${state.token}`
+                "Authorization": `Bearer ${state.token}`
             }
         });
         employees.splice(0, customers.length, ...customerResult.data);
