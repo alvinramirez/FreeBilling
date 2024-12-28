@@ -12,21 +12,7 @@
 
     onMounted(async () => {
     try {
-
-        const employeeResult = await axios.get("/api/employees", {
-            headers: {
-                "authorization": `Bearer ${state.token}`
-            }
-        });
-        employees.splice(0, employees.length, ...employeeResult.data);
-
-        const customerResult = await axios.get("/api/customers", {
-            headers: {
-                "Authorization": `Bearer ${state.token}`
-            }
-        });
-        employees.splice(0, customers.length, ...customerResult.data);
-
+        await state.loadCustomers();
     } catch (e) {
         if (e.response && e.response.status === 401) {
         message.value = "Unauthorized: Por favor intentalo otra vez.";
