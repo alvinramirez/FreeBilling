@@ -65,6 +65,12 @@
         <button class="btn" @click="changeMe">Change Me</button>
         <img src="../../imgs/nancy.jpg" :alt="nancy" :title="nancy"/>
         <button class="btn" @click="newItem">New Item</button>-->
+        <div>
+            Customers: 
+            <select>
+                <option v-for="c in state.customers :value="c.id">{{ c.companyName }}</option>
+            </select>
+        </div>
         <table class="w-full">
             <thead>
                 <tr>
