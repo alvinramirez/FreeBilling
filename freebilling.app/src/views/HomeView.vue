@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive, computed, onMounted } from "vue";
+    import { ref, reactive, computed, onMounted, watch } from "vue";
     import { formatMoney } from "@/formatters";
     import axios from "axios";
     import WaitCursor from "@/components/WaitCursor.vue";
@@ -11,15 +11,13 @@
 
     const isBusy = ref(false);
 
+    const customerId = ref(0);
+
     onMounted(async () => {
         try {
             isBusy.value = true;
-            const result = await axios("/api/customers/1/timebills");
-            isBusy.value = false;
-            if (result.status === 200)
-            {
-                state.timeBills.splice(0, state.timeBills.length, ...result.data);
-            }
+            await state.loadCustomers();
+            
         } catch {
             console.log("Failed");
         } finally {
@@ -31,6 +29,15 @@
         return state.timeBills.map(b => b.billingRate * b.hours)
                     .reduce((b, t) => t + b, 0);
     })
+
+    watch(customerId, async () => {
+        try {
+            isBusy.value = true;
+            state.loadTimeBills(customerId.value);
+        } catch {
+            isBusy.value = false;
+        }
+    });
 
     function changeMe()
     {
@@ -67,7 +74,7 @@
         <button class="btn" @click="newItem">New Item</button>-->
         <div>
             Customers: 
-            <select>
+            <select class="w-96 mx-2" v-model="customerId">
                 <option v-for="c in state.customers :value="c.id">{{ c.companyName }}</option>
             </select>
         </div>
