@@ -21,10 +21,17 @@ export default reactive({
         if (this.employees.length === 0) {
             const employeesResult = await axios.get("/api/employees", {
                 headers: {
-                    Authorization: `Bearer ${state.token}`
+                    Authorization: `Bearer ${this.state.token}`
                 }
             });
             this.employees.splice(this.employees, this.employees.length, ...employeesResult.data);
+        }
+    },
+    async loadTimeBills(customerId) {
+        this.currentCustomerId = customerId;    
+        const result = await axios.get(`/api/customers/${this.currentCustomerId}/timebills`);
+        if (result.status === 200) {
+            this.state.timebills.splice(0, this.state.timebills.length, ...result.data);
         }
     }
 });
