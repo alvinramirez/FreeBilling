@@ -14,13 +14,13 @@
     try {
         await state.loadCustomers();
         await state.loadEmployees();
-    } catch (e) {
-        if (e.response && e.response.status === 401) {
-        message.value = "Unauthorized: Por favor intentalo otra vez.";
-        router.push("/login");
-    } else {
-        message.value = e.message || "Ha ocurrido un error.";
-    }
+        } catch (e) {
+            if (e.response && e.response.status === 401) {
+            message.value = "Unauthorized: Por favor intentalo otra vez.";
+            router.push("/login");
+        } else {
+            message.value = e.message || "Ha ocurrido un error.";
+        }
     }
 });
 
@@ -45,7 +45,7 @@
             <label for="client">Client</label>
             <select id="client" name="client" v-model="bill.clientId">
                 <option>Pick One...</option>
-                <option v-for="c in customers" :value="c.Id" :key="c.Id">{{ c.companyName}}</option>
+                <option v-for="c in state.customers" :value="c.Id" :key="c.Id">{{ c.companyName}}</option>
             </select>
             <div class="mt-2">
                 <button type="submit" class="bg-green-800 hover:bg-green-700 mr-2">Save</button>
