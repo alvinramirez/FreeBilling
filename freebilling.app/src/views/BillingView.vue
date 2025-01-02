@@ -12,17 +12,21 @@
 
     onMounted(async () => {
     try {
-        await state.loadCustomers();
-        await state.loadEmployees();
-        } catch (e) {
+            await state.loadCustomers();
+            await state.loadEmployees();
+        }
+        catch (e)
+        {
             if (e.response && e.response.status === 401) {
             message.value = "Unauthorized: Por favor intentalo otra vez.";
             router.push("/login");
-        } else {
-            message.value = e.message || "Ha ocurrido un error.";
+            }
+            else
+            {
+                message.value = e.message || "Ha ocurrido un error.";
+            }
         }
-    }
-});
+    });
 
 
 </script>
