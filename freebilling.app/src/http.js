@@ -9,5 +9,12 @@ export default {
                 Authorization: `Bearer ${this.state.token}`
             }
         });
+    },
+    async post(url, data) {
+        return await axios.post(url, data, {
+            headers: {
+                Authorization: `Bearer ${state.token}`
+            }
+        });
     }
 }
