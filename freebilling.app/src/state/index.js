@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { reactive } from "vue";
 import axios from "axios";
 
@@ -32,6 +33,16 @@ export default reactive({
         const result = await axios.get(`/api/customers/${this.currentCustomerId}/timebills`);
         if (result.status === 200) {
             this.state.timebills.splice(0, this.state.timebills.length, ...result.data);
+        }
+    },
+    async saveBill(bill) {
+        const result = await http.post("/api/timebills", bill);
+        if (result.status === 201)
+        {
+            if (result.data.customerId === this.currentCustomerId)
+            {
+                this.timeBills.push(result.data);
+            }
         }
     }
 });
