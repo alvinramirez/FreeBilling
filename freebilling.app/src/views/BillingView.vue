@@ -28,6 +28,18 @@
         }
     });
 
+    async function saveBill()
+    {
+        try
+        {
+            await state.saveBill(bill.value);
+            router.push("/");
+        }
+        catch (e)
+        {
+            message.value = e;
+        }
+    }
 
 </script>
 
@@ -35,7 +47,7 @@
     <div class="w-96 mx-auto bg-white p-2">
         <h1>Billing</h1>
         <div v-if="message">{{ message }}</div>
-        <form novalidate>
+        <form novalidate @submit.prevent="saveBill">
             <label for="time">Time</label>
             <input type="text" name="time" id="time" v-model="bill.hoursWorked" />
             <label for="workPerformed">Work Performed</label>
