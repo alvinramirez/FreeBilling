@@ -9,7 +9,13 @@ export default defineConfig({
     vue(),
     ],
     build: {
-        outDir: "../FreeBilling.Web/wwroot/app/"
+        outDir: "../FreeBilling.Web/wwwroot/app/",
+        rollupOptions: {
+            input: {
+                main: fileURLToPath(new URL('./index.html', import.meta.url)),
+                admin: fileURLToPath(new URL('./admin.html', import.meta.url))
+            }
+        }
     },
   resolve: {
     alias: {
