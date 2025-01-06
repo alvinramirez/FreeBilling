@@ -75,7 +75,7 @@
         <div>
             Customers: 
             <select class="w-96 mx-2" v-model="customerId">
-                <option v-for="c in state.customers :value="c.id">{{ c.companyName }}</option>
+                <option v-for="c in state.customers" :value="c.id">{{ c.companyName }}</option>
             </select>
         </div>
         <table class="w-full">
